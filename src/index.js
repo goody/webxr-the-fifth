@@ -270,11 +270,11 @@ export function init() {
 
     setupControllers();
     roomHall.setup(context);
-    roomPanorama.setup(context);
+/*     roomPanorama.setup(context);
     roomPanoramaStereo.setup(context);
     roomPhotogrammetryObject.setup(context);
     roomVertigo.setup(context);
-    roomSound.setup(context);
+    roomSound.setup(context); */
 
     rooms[context.room].enter(context);
 

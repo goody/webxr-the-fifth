@@ -4,6 +4,7 @@ export default {
   // hall
   foxr_tex: { url: 'foxr.png', options: { encoding: THREE.sRGBEncoding, flipY: false} },
   hall_model: { url: 'hall.glb' },
+  hall_model: { url: 'TheFifth_v7.glb' },
   generic_controller_model: { url: 'generic_controller.glb' },
   lightmap_tex: { url: 'lightmap.jpg', options: { encoding: THREE.sRGBEncoding, flipY: false} },
   controller_tex: { url: 'controller.basis' },

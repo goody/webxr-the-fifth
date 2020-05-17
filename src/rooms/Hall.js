@@ -60,11 +60,16 @@ export function setup(ctx) {
     'clouds': new THREE.MeshBasicMaterial({map: cloudsTex, transparent: true}),
     'foxr': new THREE.MeshBasicMaterial({map: foxrTex, transparent: true}),
     'mozillamr': new THREE.MeshBasicMaterial({map: mozillamrTex, transparent: true}),
+    'SouthWall': hallMaterial,
+    'NorthWall': hallMaterial,
+    'EastWall': hallMaterial,
+    'WestWall': hallMaterial,
+    'Plane': hallMaterial,
   };
 
   hall = assets['hall_model'].scene;
   hall.traverse(o => {
-    if (o.name == 'teleport') {
+    if (o.name == 'Plane') {
       teleportFloor = o;
       //o.visible = false;
       o.material.visible = false;
@@ -78,13 +83,13 @@ export function setup(ctx) {
     }
   });
 
-  paintings.setup(ctx, hall);
+/*   paintings.setup(ctx, hall);
   xylophone.setup(ctx, hall);
   graffiti.setup(ctx, hall);
   newsticker.setup(ctx, hall);
   panoballs.setup(ctx, hall);
-  infopanels.setup(ctx, hall);
-
+  infopanels.setup(ctx, hall); */
+  
   ctx.raycontrol.addState('teleport', {
     colliderMesh: teleportFloor,
     onHover: (intersection, active) => {
@@ -158,12 +163,12 @@ export function exit(ctx) {
 }
 
 export function execute(ctx, delta, time) {
-  panoballs.execute(ctx, delta, time);
+/*   panoballs.execute(ctx, delta, time);
   paintings.execute(ctx, delta, time);
   xylophone.execute(ctx, delta, time, controllers);
   graffiti.execute(ctx, delta, time);
   newsticker.execute(ctx, delta, time);
-  infopanels.execute(ctx, delta, time);
+  infopanels.execute(ctx, delta, time); */
   updateUniforms(time);
   //checkCameraBoundaries(ctx);
 
