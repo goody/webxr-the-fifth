@@ -87,8 +87,8 @@ export function setup(ctx) {
   xylophone.setup(ctx, hall);
   graffiti.setup(ctx, hall);
   newsticker.setup(ctx, hall);
-  panoballs.setup(ctx, hall);
-  infopanels.setup(ctx, hall); */
+  panoballs.setup(ctx, hall); */
+  infopanels.setup(ctx, hall); 
   
   ctx.raycontrol.addState('teleport', {
     colliderMesh: teleportFloor,
@@ -143,13 +143,13 @@ export function enter(ctx) {
   ctx.renderer.setClearColor( 0xC0DFFB );
   ctx.scene.add(scene);
 
-  xylophone.enter(ctx);
-  graffiti.enter(ctx);
+/*   xylophone.enter(ctx);
+  graffiti.enter(ctx); */
   infopanels.enter(ctx);
   ctx.raycontrol.activateState('doors');
   ctx.raycontrol.activateState('teleport');
-  paintings.enter(ctx);
-  panoballs.enter(ctx);
+/*   paintings.enter(ctx);
+  panoballs.enter(ctx); */
 }
 
 export function exit(ctx) {
@@ -167,8 +167,8 @@ export function execute(ctx, delta, time) {
   paintings.execute(ctx, delta, time);
   xylophone.execute(ctx, delta, time, controllers);
   graffiti.execute(ctx, delta, time);
-  newsticker.execute(ctx, delta, time);
-  infopanels.execute(ctx, delta, time); */
+  newsticker.execute(ctx, delta, time); */
+  infopanels.execute(ctx, delta, time);
   updateUniforms(time);
   //checkCameraBoundaries(ctx);
 
