@@ -66,7 +66,7 @@ export function setup(ctx) {
     'WestWall': hallMaterial,
     'Plane': hallMaterial,
   };
-
+// MUY IMPORTANTE
   hall = assets['hall_model'].scene;
   hall.traverse(o => {
     if (o.name == 'Plane') {
