@@ -69,7 +69,7 @@ export function setup(ctx) {
 // MUY IMPORTANTE
   hall = assets['hall_model'].scene;
   hall.traverse(o => {
-    if (o.name == 'Plane') {
+    if (o.name == 'floor') {
       teleportFloor = o;
       //o.visible = false;
       o.material.visible = false;
@@ -88,7 +88,7 @@ export function setup(ctx) {
   graffiti.setup(ctx, hall);
   newsticker.setup(ctx, hall);
   panoballs.setup(ctx, hall); */
-  infopanels.setup(ctx, hall); 
+ // infopanels.setup(ctx, hall); 
   
   ctx.raycontrol.addState('teleport', {
     colliderMesh: teleportFloor,
