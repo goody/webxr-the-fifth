@@ -67,9 +67,10 @@ export function setup(ctx) {
     'Plane': hallMaterial,
   };
 // MUY IMPORTANTE
+// you need the teleport/plane for teleporting
   hall = assets['hall_model'].scene;
   hall.traverse(o => {
-    if (o.name == 'floor') {
+    if (o.name == 'teleport') {
       teleportFloor = o;
       //o.visible = false;
       o.material.visible = false;
