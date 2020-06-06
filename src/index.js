@@ -241,7 +241,7 @@ export function init() {
   cameraRig.add(camera);
   cameraRig.add(controllers[0]);
   cameraRig.add(controllers[1]);
-  cameraRig.position.set(2, 0, 2);
+  cameraRig.position.set(6, 0, -2);
   scene.add(cameraRig);
 
   context.assets = assets;
