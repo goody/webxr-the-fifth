@@ -44,7 +44,8 @@ var listener, ambientMusic;
 
 var rooms = [
   roomHall,
-  roomSound,
+  roomVertigo,
+  /* roomSound,
   roomPhotogrammetryObject,
   roomVertigo,
   roomPanoramaStereo,
@@ -52,7 +53,7 @@ var rooms = [
   roomPanorama,
   roomPanorama,
   roomPanorama,
-  roomPanorama,
+  roomPanorama, */
 ];
 
 const roomNames = [
@@ -69,7 +70,7 @@ const roomNames = [
 ];
 
 const musicThemes = [
-  false,
+  'office_bg_snd',
   false,
   'chopin_snd',
   'wind_snd',
@@ -84,7 +85,7 @@ const musicThemes = [
 const urlObject = new URL(window.location);
 const roomName = urlObject.searchParams.get('room');
 context.room = roomNames.indexOf(roomName) !== -1 ? roomNames.indexOf(roomName) : 0;
-// console.log(`Current room "${roomNames[context.room]}", ${context.room}`);
+console.log(`Current room "${roomNames[context.room]}", ${context.room}`);
 const debug = urlObject.searchParams.has('debug');
 const handedness = urlObject.searchParams.has('handedness') ? urlObject.searchParams.get('handedness') : "right";
 
@@ -135,10 +136,12 @@ function playMusic(room) {
   if (ambientMusic.source) ambientMusic.stop();
 
   const music = musicThemes[room];
+  console.log(`room: ${room}`);
   if (!music) { return; }
   ambientMusic.setBuffer(assets[music]);
   ambientMusic.setLoop(true);
-  ambientMusic.setVolume(1.0);
+  let vol = room === 0 ? .01 : 1.0;
+  ambientMusic.setVolume(.01);
   ambientMusic.offset = Math.random() * 60;
   ambientMusic.play();
 }
@@ -186,8 +189,8 @@ export function init() {
   renderer.xr.enabled = true;
 
   scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.005, 10000);
-  camera.position.set(0, 1.6, 0);
+  camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+  camera.position.set(-6, 1.6, 6);
   listener = new THREE.AudioListener();
   camera.add(listener);
 
@@ -278,7 +281,7 @@ export function init() {
     roomSound.setup(context); */
 
     rooms[context.room].enter(context);
-
+    playMusic(context.room);
     document.body.appendChild(renderer.domElement);
     document.body.appendChild(VRButton.createButton(renderer));
     renderer.setAnimationLoop(animate);

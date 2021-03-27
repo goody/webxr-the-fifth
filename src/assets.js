@@ -5,7 +5,7 @@ export default {
   foxr_tex: { url: 'foxr.png', options: { encoding: THREE.sRGBEncoding, flipY: false} },
   // hall_model: { url: 'hall.glb' },
   // hall_model: { url: 'testwalls3.glb' },
-  hall_model: { url: 'scene_v19.glb' },
+  hall_model: { url: 'HO-December.glb' },
   generic_controller_model: { url: 'generic_controller.glb' },
   lightmap_tex: { url: 'lightmap.jpg', options: { encoding: THREE.sRGBEncoding, flipY: false} },
   controller_tex: { url: 'controller.basis' },
@@ -77,6 +77,7 @@ export default {
   forest_snd: { url: 'ogg/forest.ogg' },
   wind_snd: { url: 'ogg/wind.ogg' },
   teleport_a_snd: { url: 'ogg/teleport_a.ogg' },
-  teleport_b_snd: { url: 'ogg/teleport_b.ogg' }
+  teleport_b_snd: { url: 'ogg/teleport_b.ogg' },
+  office_bg_snd: { url: 'ogg/office_bg.ogg'}
 };
 
